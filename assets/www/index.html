@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m,sap.ui.commons"
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+		<script type="text/javascript" charset="utf-8" src="serverContext.js"></script>
+		<script type="text/javascript" src="js/connectivity.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<link rel="stylesheet" href="css/zcitapp.css">
+		<script type="text/javascript" src="js/global.js"></script>
+
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+		<script>
+
+        document.addEventListener("deviceready", init, false);
+		document.addEventListener("pause", onPause, false);
+		document.addEventListener("resume", onResume, false);
+		document.addEventListener("onSapResumeSuccess", onSapResumeSuccess, false);
+		document.addEventListener("onSapLogonSuccess", onSapLogonSuccess, false);
+		document.addEventListener("onSapResumeError", onSapResumeError, false);
+		//navigator.splashscreen.hide();
+
+		</script>
+
+		<script>
+
+		/* Global declarations */
+
+		var oModel = new sap.ui.model.json.JSONModel();
+		sap.ui.getCore().setModel(oModel, "model");
+		oModel.iSizeLimit = 999;
+
+		var globalThis; //Global this object
+		var oEventBus = new sap.ui.getCore().getEventBus();
+		var oCore = sap.ui.getCore();
+		var busyLoader = new sap.m.BusyDialog();
+		var userId;
+		var password;
+		var CookieId; // for SMP
+		var authHeader;
+		var odataModel; // model for OData
+		var osesheaderdataModel; // model for SES Header OData
+		var headers; // header for read operation
+		var selectedSEContext; //last selected SE Object
+		var SECount; //SECount
+		var selectedPRContext; //last selected PR Object
+		var PRCount; //PRCount
+		var sesAuth = false;
+		var prAuth = false;
+		var someAppAuth = false;
+		var serviceFlag;  //service flag for PR Item
+
+
+		var deviceType = "Android";
+        if (jQuery.device.is.iphone) {
+            deviceType = "iPhone";
+        }
+		
+		var oDialog = new sap.m.Dialog({
+			id : "idoDialog",
+			title : "Message",
+			type : "Message",
+			endButton : new sap.m.Button({
+				text : "OK",
+				press : function() {
+					debugger;
+					oDialog.close();
+				}
+			})
+		});
+
+		var oPushDialog = new sap.m.Dialog({
+			id : "idoPushDialog",
+			title : "Message",
+			type : "Message",
+			endButton : new sap.m.Button({
+				text : "OK",
+				press : function() {
+					debugger;
+					oPushDialog.close();
+				}
+			})
+		});
+
+		var oServiceDialog = new sap.m.Dialog({
+			id : "idoServiceDialog",
+			title : "",
+			type : "Message",
+			showHeader : true,
+			endButton : new sap.m.Button({
+				icon : "sap-icon://inspect-down",
+				press : function() {
+					debugger;
+					oServiceDialog.close();
+				}
+			})
+
+		});
+
+		var oNoAuthDialog = new sap.m.Dialog({
+			id : "idoNoAuthDialog",
+			title : "Message",
+			type : "Message",
+			endButton : new sap.m.Button({
+				text : "OK",
+				press : function() {
+					debugger;
+					oNoAuthDialog.close();
+					oEventBus.publish("nav", "to", {
+						goToPage : "App--idLogin",
+						data : null
+					});
+				}
+			})
+		});
+
+		var oLogoutDialog = new sap.m.Dialog({
+			id : "idoLogoutDialog",
+			title : "Alert",
+			type : "Message",
+			content : [ new sap.m.Label({
+				text : "Are you sure you want to Logout?"
+			}).addStyleClass("dialog_message")],
+			leftButton : new sap.m.Button({
+				text : "No",
+				press : function() {
+					debugger;
+					oLogoutDialog.close();
+				}
+			}),
+			rightButton : new sap.m.Button({
+				text : "Yes",
+				press : function() {
+					debugger;
+					unRegister();
+					applicationContext = null;
+					oLogoutDialog.close();
+				}
+			})
+
+		});
+
+		var oConfirmDialog = new sap.m.Dialog({
+			id : "idoConfirmDialog",
+			title : "Alert",
+			type : "Message",
+			leftButton : new sap.m.Button({
+				text : "Cancel",
+				press : function() {
+					debugger;
+					oConfirmDialog.close();
+				}
+			}),
+			rightButton : new sap.m.Button({
+				text : "OK",
+				press : function() {
+					debugger;
+					oCore.byId("App--idSEDetails").getController().confirmRelease();
+					oConfirmDialog.close();
+					
+
+				}
+			})
+		});
+
+		var oPRConfirmDialog = new sap.m.Dialog({
+			id : "idoPRConfirmDialog",
+			title : "Alert",
+			type : "Message",
+			leftButton : new sap.m.Button({
+				text : "Cancel",
+				press : function() {
+					debugger;
+					oPRConfirmDialog.close();
+				}
+			}),
+			rightButton : new sap.m.Button({
+				text : "OK",
+				press : function() {
+					debugger;
+					oCore.byId("App--idPRDetails").getController().confirmRelease();
+					oPRConfirmDialog.close();
+
+
+				}
+			})
+		});
+
+
+
+		var oExitDialog = new sap.m.Dialog({
+			id : "idExitDialog",
+			title : "Alert",
+			type : "Message",
+			content : [ new sap.m.Label({
+				text : "Are you sure you want to Exit?"
+			}).addStyleClass("dialog_message")],
+			leftButton : new sap.m.Button({
+				text : "No",
+				press : function() {
+					debugger;
+					oExitDialog.close();
+				}
+			}),
+			rightButton : new sap.m.Button({
+				text : "Yes",
+				press : function() {
+					debugger;
+					navigator.app.exitApp();
+				}
+			})
+
+		});
+
+
+		ErrorFn = function(readError) {
+			debugger;
+
+			if(readError.response.statusCode==401)  //to alert user if password is changed
+			{
+				oDialog.removeAllContent();
+				oDialog.addContent(new sap.m.Text({
+					text : "Unable to Authenticate, Please check your credential Or change your password, if domain password changed",
+				}));
+				oDialog.open();
+			}
+			else if (readError.response.statusCode!=401 && readError.response.statusText != "") {
+					try {
+
+						oDialog.removeAllContent();
+						var oError = JSON.parse(readError.response.body.replace("Bad Request", ""));
+						var oErrorLen = oError.error.innererror.errordetails.length;
+						oDialog.addContent(new sap.m.Label(
+							{
+								text : oError.error.message.value,
+							}));
+						oDialog.open();
+
+					} catch (err) {
+
+						oDialog.removeAllContent();
+						oDialog.addContent(new sap.m.Label({
+							text : readError.response.statusText,
+						}));
+						oDialog.open();
+					}
+
+			} else {
+					oDialog.removeAllContent();
+					oDialog.addContent(new sap.m.Label({
+						text : "Error Occurred",
+					}));
+					oDialog.open();
+			}
+		}
+
+		toDateString = function(date) {
+			
+			debugger;
+			var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({pattern : "dd/MM/yyyy" });
+			
+			var dateFormatted = dateFormat.format(date);
+
+			return dateFormatted;
+		}
+
+		</script>
+		<script>
+
+				sap.ui.localResources("zcitapp");
+				var app = new sap.m.App("main_app", {initialPage:"idLogin"});
+				var page = sap.ui.view({
+					id:"App", 
+					viewName:"zcitapp.App", 
+					type:sap.ui.core.mvc.ViewType.XML
+					});
+
+				app.addPage(page);
+				app.placeAt("content");
+		</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>

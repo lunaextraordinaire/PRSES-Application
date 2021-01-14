@@ -1,0 +1,63 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="zcitapp.SEList" xmlns:html="http://www.w3.org/1999/xhtml"  xmlns:layout="sap.ui.commons.layout">
+	<Page title="Title" id="idSEListPage">
+		<!-- =============================== HEADER ========================================== -->
+		<customHeader>
+			<Bar id="idSEList_customHeader">
+				<contentLeft>
+					<Button id="idSEList_InputPage_back" icon="sap-icon://nav-back"
+						tap="back">
+					</Button>
+				</contentLeft>
+				<contentMiddle>
+				    <Button id="idSEList__refreshList" icon="sap-icon://refresh"
+						tap="refreshList">
+					</Button>
+					<Label id="idSEList_headerTitle" text="Service Entry Sheet (">
+					</Label>
+					<Label id="idSEList_seCount" text="0"></Label>
+					<Label id="idSEList_close" text=")"></Label>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://home" tap="home">
+
+					</Button>
+				</contentRight>
+			</Bar>
+		</customHeader>
+
+		<!-- =============================== CONTENT ========================================== -->
+		<content>
+			<SearchField width="100%" id="idSEListPage_search" placeholder="Search by Service Entry No"
+				liveChange="searchSE">
+			</SearchField>
+
+			<List mode="None" id="idSEListPage_selist" backgroundDesign="Transparent" items="{model>/se}">
+
+				<items>
+					<ObjectListItem title="{model>seNoTrimmed}" intro="{model>seText}"
+						number="{model>seValue}" type="Navigation"
+						tap="listSelect" growing="true" growingThreshold="10"
+						growingScrollToLoad="true">
+
+					</ObjectListItem>
+
+				</items>
+
+			</List>
+
+		</content>
+
+		<!-- =============================== FOOTER ========================================== -->
+
+		<!-- <footer>
+			<Bar id="idPO_InputPage_footerBar">
+				<contentRight>
+					<Button id="idPO_InputPage_footerBtn" text="Submit"
+						icon="sap-icon://action" tap="submit">
+					</Button>
+				</contentRight>
+			</Bar>
+		</footer> -->
+	</Page>
+</core:View>

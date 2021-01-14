@@ -1,0 +1,190 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="zcitapp.Login" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.commons.layout">
+	<Page id="idLoginPage">
+		<!-- =============================== HEADER ========================================== -->
+		<customHeader>
+			<Bar id="idLoginPage_customHeader">
+
+				<contentMiddle> <Label id="idLoginPage_lblApp" text="Larsen and Toubro Limited"></Label> 
+					</contentMiddle>
+			</Bar>
+		</customHeader>
+
+
+		<!-- =============================== CONTENT ========================================== -->
+		<content>
+			<layout:MatrixLayout id= "idLoginMatrix" columns="3" widths="7%,86%,7%">
+				<layout:rows>
+
+					<layout:MatrixLayoutRow>
+						<layout:cells>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+
+								</layout:content>
+							</layout:MatrixLayoutCell>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+									<Label  text="" textAlign="Center" width="100%"></Label>
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+						</layout:cells>
+					</layout:MatrixLayoutRow>
+
+
+					<layout:MatrixLayoutRow>
+						<layout:cells>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+
+								</layout:content>
+							</layout:MatrixLayoutCell>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+									<Label  text="" textAlign="Center" width="100%"></Label>
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+						</layout:cells>
+					</layout:MatrixLayoutRow>
+
+
+
+					<layout:MatrixLayoutRow>
+						<layout:cells>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+
+								</layout:content>
+							</layout:MatrixLayoutCell>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+									<Label  text="" textAlign="Center" width="100%"></Label>
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+						</layout:cells>
+					</layout:MatrixLayoutRow>
+
+
+
+					<layout:MatrixLayoutRow>
+						<layout:cells>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+
+								</layout:content>
+							</layout:MatrixLayoutCell>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+									<Label id="id3" text="" textAlign="Center" width="100%"></Label>
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+						</layout:cells>
+					</layout:MatrixLayoutRow>
+
+
+
+					<layout:MatrixLayoutRow>
+						<layout:cells>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+
+								</layout:content>
+							</layout:MatrixLayoutCell>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+									<Label id="idMsg" text="Welcome To CIT Application" textAlign="Center" width="100%"></Label>
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+						</layout:cells>
+					</layout:MatrixLayoutRow>
+
+					<layout:MatrixLayoutRow>
+						<layout:cells>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+
+								</layout:content>
+							</layout:MatrixLayoutCell>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+									<Label id="idMsg2" text="Your Application is loading, please wait..." textAlign="Center" width="100%"></Label>
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+						</layout:cells>
+					</layout:MatrixLayoutRow>
+
+					<layout:MatrixLayoutRow>
+						<layout:cells>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+							<layout:MatrixLayoutCell>
+								<layout:content>
+									<Button id="idContinue" text="Continue to application..." icon="sap-icon://begin" width="100%" tap="continue" visible="false" ></Button>
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+						</layout:cells>
+					</layout:MatrixLayoutRow>
+
+					<layout:MatrixLayoutRow>
+						<layout:cells>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+							<layout:MatrixLayoutCell>
+								<layout:content>
+									<Button id="idChangePassword" text="Change Password for CIT App" icon="sap-icon://two-keys" width="100%" tap="changePassword" visible="false" ></Button>
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+						</layout:cells>
+					</layout:MatrixLayoutRow>
+
+
+					<layout:MatrixLayoutRow>
+						<layout:cells>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+
+								</layout:content>
+							</layout:MatrixLayoutCell>
+							<layout:MatrixLayoutCell>
+								<layout:content>
+									<Label id="id4" text="" textAlign="Center" width="100%"></Label>
+								</layout:content>
+							</layout:MatrixLayoutCell>
+
+						</layout:cells>
+					</layout:MatrixLayoutRow>
+
+
+				</layout:rows>
+			</layout:MatrixLayout>
+		</content>
+
+
+		<!-- =============================== FOOTER ========================================== -->
+
+		<!-- <footer>
+			<Bar id="idLoginPage_footerBar">
+				<contentMiddle>
+					
+				</contentMiddle>
+			</Bar>
+		</footer> -->
+
+	</Page>
+</core:View>

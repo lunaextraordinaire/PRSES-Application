@@ -1,0 +1,145 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.commons.layout" xmlns:c="sap.ui.commons"
+	xmlns:table="sap.ui.table" xmlns:form="sap.ui.layout.form" controllerName="zcitapp.PRDetails" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" id="idPRDetailsPage">
+		<!-- =============================== HEADER ========================================== -->
+		<customHeader>
+			<Bar id="idPRDetails_customHeader">
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" tap="back">
+					</Button>
+				</contentLeft>
+				<contentMiddle>
+					<Label id="idPRDetails_headerTitle" text="PR Details">
+
+					</Label>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://home" tap="home">
+
+					</Button>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		
+	<!-- =============================== CONTENT ========================================== -->
+
+		<content>
+
+			<Panel id="idPR_DetailPage_ObjHeader" class="prPanelStyle" expanded="true" backgroundDesign="Transparent">
+				<content>
+					<HBox width="100%" backgroundDesign="Transparent">
+						<VBox class="twoItemsLeftVertic" width="70%" backgroundDesign="Transparent">
+							<StandardListItem class="prDetailDeptStyle" title="Department:  "	info="{model>/prDetails/0/prKText}" />
+							<StandardListItem class="prDetailNoStyle" title="PR No:  " info="{model>/prDetails/0/prNo}" />
+							<StandardListItem class="prDetailDateStyle" title="PR Date:  " info="{model>/prDetails/0/prDate}" />
+							<StandardListItem class="prDetailCreatorStyle" title="PR Creator:  " info="{model>/prDetails/0/prCreator}" />
+						</VBox>
+
+						<VBox class="twoItemsRightVertic" width="30%" backgroundDesign="Transparent">
+							<StandardListItem class="" title="" info=" " />
+							<StandardListItem class="prDetailValueStyle" title="" info="{model>/prDetails/0/prValue}" />
+							<StandardListItem class="prDetailCurrencyStyle" title="" info="{model>/prDetails/0/prCurrency}" />
+						</VBox>
+
+					</HBox>
+				</content>
+
+			</Panel>
+
+			<!--<ObjectHeader id="idPR_DetailPage_ObjHeader" title="{model>/prDetails/0/prNo}" number="{model>/prDetails/0/prValue}"
+				intro="{model>/prDetails/0/prKText}" numberUnit="{model>/prDetails/0/prCurrency}">
+				<attributes>
+
+					<ObjectAttribute title="PR Creator" text="{model>/prDetails/0/prCreator}">
+					</ObjectAttribute>
+					<ObjectAttribute title="PR Date" text="{model>/prDetails/0/prDate}">
+					</ObjectAttribute>
+					
+				</attributes>
+				
+				
+			</ObjectHeader>-->
+
+
+			<IconTabBar id="idPR_DetailPage_iconTabBar" backgroundDesign="Transparent" expandable="false" expanded="true">
+				<items>
+
+					<IconTabFilter id="idPR_DetailPage_headerIconTabFilter" key="info" text="Information" icon="sap-icon://message-information">
+						<content>
+							<form:SimpleForm id="idPR_DetailPage_HeaderForm" backgroundDesign="Transparent" labelMinWidth="100" maxContainerCols="1" labelSpanS="6"
+								labelSpanL="6" labelSpanM="6">
+								
+								<Label id="idPR_DetailPage_lblDoctype" text="Doc Type"></Label>
+
+								<Text id="idPR_DetailPage_descDoctype" text="{model>/prDetails/0/prDocType}"></Text>
+
+								<Label id="idPR_DetailPage_lblDoctypeText" text="Doc Type Text"></Label>
+
+								<Text id="idPR_DetailPage_descDoctypeText" text="{model>/prDetails/0/prDocTypeText}"></Text>
+
+								<Label id="idPR_DetailPage_lblCostCenter" text="Cost Center"></Label>
+
+								<Text id="idPR_DetailPage_descItemCatText" text="{model>/prDetails/0/prCostCenter}"></Text>
+
+								<Label id="idPR_DetailPage_lblPlant" text="Plant"></Label>
+
+								<Text id="idPR_DetailPage_descPlant" text="{model>/prDetails/0/prPlant}"></Text>
+
+								<Label id="idPR_DetailPage_lblReviewedBy" text="Reviewed By"></Label>
+
+								<Text id="idPR_DetailPage_descReviewedBy" text="{model>/prDetails/0/prReviewedBy}"></Text>
+
+							</form:SimpleForm>
+						</content>
+					</IconTabFilter>
+					
+					<IconTabFilter id="idPR_DetailPage_ItemIconTabFilter" key="items" text="Item Details" icon="sap-icon://sales-order-item">
+						<content>
+							<List  id="idPR_DetailPage_ItemTable" backgroundDesign="Transparent" items="{model>/prItems}">
+							    
+							    <items>
+							        <ObjectListItem type="Navigation" tap="listSelect" title="{model>prItemNo}"
+							          intro="{model>prItemDesc}"
+							          number="{model>prItemValue}"  
+							          numberUnit ="{model>prItemCurrency}"
+							          >
+							            
+							        </ObjectListItem>
+							        
+							    </items>
+							</List>
+						</content>
+					</IconTabFilter>
+
+					<IconTabFilter id="idPR_DetailPage_HeaderTextFilter" key="items" text="File Note" icon="sap-icon://notes">
+						<content>
+							<form:SimpleForm id="idPR_DetailPage_HeaderTextForm" backgroundDesign="Transparent" labelMinWidth="100" maxContainerCols="1" labelSpanS="6"
+								labelSpanL="6" labelSpanM="6">
+
+								<Text id="idPR_DetailPage_descHeaderText" text="{model>/prHeaderText/0/prHeaderText}"></Text>
+
+							</form:SimpleForm>
+						</content>
+					</IconTabFilter>
+
+				</items>
+
+
+			</IconTabBar>
+
+
+	</content>
+
+
+		<!-- =============================== FOOTER ========================================== -->
+
+		<footer>
+			<Bar id="idPRDetailsPage_footerBar">
+				<contentRight>
+					<Button id="idPR_DetailPage_footerBtn" text="Release" icon="sap-icon://accounting-document-verification" tap="release">
+					</Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

@@ -1,0 +1,13 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="zcitapp.App" xmlns:html="http://www.w3.org/1999/xhtml">
+ <App id="idApp"> 
+ <mvc:XMLView id="idLogin" viewName="zcitapp.Login"/>
+  <mvc:XMLView id="idDashboard" viewName="zcitapp.AppDashboard"/>
+  <mvc:XMLView id="idSEList" viewName="zcitapp.SEList"/>
+ <mvc:XMLView id="idSEDetails" viewName="zcitapp.SEDetails"/>
+ <mvc:XMLView id="idSEItemDetails" viewName="zcitapp.SEItemDetails"/>
+ <mvc:XMLView id="idPRList" viewName="zcitapp.PRList"/>
+ <mvc:XMLView id="idPRDetails" viewName="zcitapp.PRDetails"/>
+ <mvc:XMLView id="idPRItemDetails" viewName="zcitapp.PRItemDetails"/> 
+</App> 
+</core:View>

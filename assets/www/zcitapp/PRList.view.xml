@@ -1,0 +1,90 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="zcitapp.PRList" xmlns:html="http://www.w3.org/1999/xhtml"  xmlns:layout="sap.ui.commons.layout">
+	<Page title="Title" id="idPRListPage">
+		<!-- =============================== HEADER ========================================== -->
+		<customHeader>
+			<Bar id="idSEList_customHeader">
+				<contentLeft>
+					<Button id="idPRList_InputPage_back" icon="sap-icon://nav-back"
+						tap="back">
+					</Button>
+				</contentLeft>
+				<contentMiddle>
+				    <Button id="idPRList__refreshList" icon="sap-icon://refresh"
+						tap="refreshList">
+					</Button>
+					<Label id="idPRList_headerTitle" text="PR (">
+					</Label>
+					<Label id="idPRList_prCount" text="0"></Label>
+					<Label id="idPRList_close" text=")"></Label>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://home" tap="home">
+
+					</Button>
+				</contentRight>
+			</Bar>
+		</customHeader>
+
+		<!-- =============================== CONTENT ========================================== -->
+		<content>
+			<SearchField width="100%" id="idPRListPage_search" placeholder="Search by PR No"
+				liveChange="searchPR">
+			</SearchField>
+
+			<List class="prPanelStyle" backgroundDesign="Transparent" showNoData="false" growingScrollToLoad="true" growing="true"
+				growingThreshold="10" id="idPRListPage_prlist" items="{model>/pr}">
+				<items>
+					<CustomListItem backgroundDesign="Transparent" type="Navigation" tap="listSelect">
+						<Panel class="" backgroundDesign="Transparent">
+							<content>
+								<HBox width="100%" backgroundDesign="Transparent">
+									<VBox class="twoItemsLeftVertic" width="50%" backgroundDesign="Transparent">
+										<!--<StandardListItem title="Department:  " info="{model>prKText}"/>-->
+										<StandardListItem class="prNoStyle" title="PR No:  " info="{model>prNo}"/>
+										<!--<StandardListItem class="prCreatorStyle" title="Creator:  " info="{model>prCreatedName}"/>-->
+									</VBox>
+									<VBox class="twoItemsRightVertic" width="50%" backgroundDesign="Transparent">
+										<StandardListItem class="prValueStyle" title="" info="{model>prValue}"/>
+										<StandardListItem class="prCurrencyStyle" title="" info="{model>prCurrency}"/>
+									</VBox>
+								</HBox>
+							</content>
+						</Panel>
+					</CustomListItem>
+				</items>
+			</List>
+
+			<!--<List mode="None" id="idPRListPage_prlist" backgroundDesign="Transparent" items="{model>/pr}">
+
+				<items>
+					<ObjectListItem title="{model>prNo}" intro="{model>prKText}"
+						number="{model>prValue}" type="Navigation" numberUnit="{model>prCurrency}"
+						tap="listSelect" growing="true" growingThreshold="10"
+						growingScrollToLoad="true">
+
+						<attributes>
+							<ObjectAttribute text="{model>prCreatedName}">
+							</ObjectAttribute>
+						</attributes>
+
+					</ObjectListItem>
+				</items>
+
+			</List>-->
+
+		</content>
+
+		<!-- =============================== FOOTER ========================================== -->
+
+		<!-- <footer>
+			<Bar id="idPO_InputPage_footerBar">
+				<contentRight>
+					<Button id="idPO_InputPage_footerBtn" text="Submit"
+						icon="sap-icon://action" tap="submit">
+					</Button>
+				</contentRight>
+			</Bar>
+		</footer> -->
+	</Page>
+</core:View>

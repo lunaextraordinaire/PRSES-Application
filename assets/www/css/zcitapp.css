@@ -1,0 +1,524 @@
+@font-face{
+    src: url(../fonts/opensansRegular.ttf);
+    font-family: Open Sans;
+}
+*{
+    font-family: Open Sans !important;
+}
+
+.sapUiIcon{
+    font-family: SAP-icons !important;
+}
+
+
+#App--idLogin--idLoginPage_customHeader,
+#App--idSEList--idSEList_customHeader,
+#App--idSEDetails--idSEDetails_customHeader,
+#App--idSEItemDetails--idSEItemDetails_customHeader
+{
+    background-color: #FFFFFF !important;
+}
+
+ #main_app.sapMApp.sapMNav.sapUiGlobalBackgroundColor {
+    background-image: url("../bg_white.jpg") !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 350px;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: center;
+} 
+
+ 
+.sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMVBox {
+    width: 33%;
+    display: inline-block;
+    float: left;
+}
+
+.sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMVBox {
+    width: 33%;
+    display: inline-block;
+    float: left;
+}
+
+
+.sapMFlexItem {
+    width: 92% !important;
+    left: 0;
+    right: 0;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.hBox {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    background-color: #5887b1;
+    padding: 0 0 20px 0;
+}
+
+
+.sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMVBox{
+    position: relative !important;
+}
+
+.hBox_shift.sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMFlexItem.sapMHBox .sapMFlexItem{
+    width: auto !important;
+    float: left;
+    margin: 0;
+    font-weight: 600;
+}
+
+.pending_count_hbox{
+    position: absolute !important;
+    top:-5px;
+    left:30px; 
+}
+
+.footer_count_hbox{
+    position: absolute !important;
+    top:-20px;
+    left:30px;
+}
+
+ .pending_count.sapMText.sapMTextBreakWord.sapMTextMaxWidth.sapUiSelectable{
+    min-width: 28px;
+    height: auto !important;
+    line-height: 23px;
+    background-color: #FFA500;
+    padding: 0 2px;
+    color: #fff !important;
+    text-align: center !important;
+    border-radius: 6px;
+    font-weight: 600;
+    display: block;
+    width: 100px !important;
+} 
+
+ .pending_count_hbox.sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMFlexItem.sapMHBox{
+    width: 20px !important;
+    height:20px;
+    top: -5px;
+    right: -25px;
+} 
+
+
+#carousel .sapMFlexItem span.pending_count.sapMText.sapMTextBreakWord.sapMTextMaxWidth.sapUiSelectable{
+    height: 20px;
+    margin: 0px !important;
+}
+
+ 
+ .sapUiIcon {
+  color: #09548d;
+}
+
+.sapMSLITitleOnly {
+    font-size: 0.875rem;
+    /*font-weight: bold;*/
+}
+
+.sapMListHdr {
+	font-size: 0.875rem;
+    /*font-weight: bold;*/
+    background-color: #f4f4f4;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.sapMPanelContent {
+    padding: 0.5rem;
+
+}
+
+
+#idoServiceDialog.sapMMessageDialog .sapMDialogScrollCont {
+    box-sizing: border-box;
+    padding: 0rem;
+}
+
+
+#idoServiceDialog-footer {
+	background-color: #09548d !important;
+}
+
+
+#idoServiceDialog-title {
+	color:#09548d !important;
+	font-size:0.875rem;
+	font-weight: bold;
+}
+
+/***********new changes start*************/
+
+h1>.sapMText {
+    font-size: 1.0rem !important;
+}
+
+.sapMOHNumberDiv .sapMObjectNumberText {
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
+
+.sapMObjectNumberUnit {
+    font-weight: bold;
+}
+
+.sapMObjLNumber {
+    font-size: 1.0rem;
+}
+
+.sapMText.sapMObjLTitle {
+    font-size: 1.0rem;
+}
+
+html.sap-phone .sapMOH {
+    padding: 0.5rem 1rem !important;
+}
+
+.sapMObjectAttributeDiv .sapMText, .sapMObjectAttributeDiv .sapMObjectAttributeTitle, .sapMObjectAttributeDiv .sapMObjectAttributeText {
+    font-size: 0.75rem;
+    color: #333333 !important;
+}
+
+/***********new changes end*************/
+
+
+/********New FE CSS Start**************/
+
+.prPanelStyle .sapMFlexItem li {
+    border-bottom: none;
+    background: transparent !important;
+}
+
+
+.prPanelStyle .sapMPanelContent {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0rem;
+}
+
+.prPanelStyle .sapMLIB {
+    /* background-color: hsl(0, 0%, 100%); */
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+ .prPanelStyle .sapMSLITitle, .prPanelStyle .sapMSLITitleOnly, .prPanelStyle .sapMSLIDescription {
+    text-align: left;
+    /* font-size: 14px; */
+}
+
+   .prPanelStyle .sapMSLI {
+    height: 1.6rem;
+}
+
+.prPanelStyle .sapMSLIDiv {
+    flex: 0 0 auto;
+}
+
+/* .prPanelStyle .sapMSLITitleOnly {
+    color: hsl(0, 0%, 33%);
+} */
+
+/* .prPanelStyle .sapMLIBActive .sapMSLITitleOnly {
+    color: hsl(0, 0%, 33%);
+} */
+.prPanelStyle .sapMPanelContent {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0.5em 0 0.5rem;
+}
+
+/* .prPanelStyle .sapMSLIInfoNone {
+    color: hsl(0, 0%, 20%);
+    font-size: 14px;
+    font-weight: bold;
+} */
+
+.prPanelStyle .sapMSLIInfo {
+    margin: 0 0 0 0.2rem;
+}
+
+.prPanelStyle .sapMSLI {
+    border-bottom: none;
+}
+.prPanelStyle .clgliClass {
+    padding: 0 0.5rem !important;
+    /* background: rgba(255, 255, 255, 0) !important; */
+}
+
+.prPanelStyle .twoItemsRightVertic {
+    float: right;
+}
+
+.prPanelStyle .twoItemsRightVertic li {
+    float: right;
+}
+
+.prPanelStyle .twoItemsRightVertic {
+    float: left;
+    text-align: right;
+    width: 50%;
+}
+
+.prPanelStyle .twoItemsRightVertic li {
+    float: left;
+    padding: 0;
+    width: 100%;
+}
+.prPanelStyle .twoItemsRightVertic li > div {
+    display: inline-block !important;
+    float: left;
+    text-align: right;
+    width: 100%;
+}
+.prPanelStyle .twoItemsRightVertic li > div div {
+    float: right;
+    padding: 0 3px;
+    width: auto;
+}
+
+.prPanelStyle .sapMGrowingList .sapMSLITitle, .prPanelStyle .sapMGrowingList .sapMSLIDescription {
+    text-align: center !important;
+}
+
+/*  .prPanelStyle .sapMLIB.sapMLIBTypeActive.sapMLIBActive {
+    background: #f0f0f0 !important;
+    color: #333333 !important;
+}
+.prPanelStyle .sapMLIB.sapMLIBTypeActive.sapMLIBActive .sapMSLITitle {
+    color: #333333 !important;
+}
+.prPanelStyle .sapMLIB.sapMLIBTypeActive.sapMLIBActive .sapMSLIDescription {
+    color: #666666 !important;
+} */
+
+
+.twoItemsLeftVertic {
+    width: 50%;
+}
+
+.twoItemsLeftVertic .sapMFlexItem li {
+    padding: 0 0.5rem;
+}
+
+.twoItemsLeftVertic .sapMFlexItem li {
+    float: left;
+}
+
+.twoItemsRightVertic {
+    width: 50%;
+}
+
+.twoItemsRightVertic .sapMFlexItem li {
+    padding: 0 0rem;
+}
+
+.twoItemsRightVertic .sapMFlexItem li {
+    float: right;
+}
+
+.prValueStyle .sapMSLIInfo {
+	font-size: 1rem;
+
+}
+
+.prCurrencyStyle .sapMSLIInfo {
+	font-size: 0.75rem;
+
+}
+
+.prNoStyle .sapMSLIInfo {
+    margin-top:1.5rem;
+	font-size: 1rem;
+    color: #09548d;
+}
+
+.prNoStyle .sapMSLITitleOnly {
+    margin-top:1.5rem;
+    color: #09548d;
+}
+
+.prCreatorStyle .sapMSLIInfo {
+	font-size: 0.75rem;
+}
+
+.prCreatorStyle .sapMSLITitleOnly {
+	font-size: 0.75rem;
+}
+
+.prDetailValueStyle .sapMSLIInfo {
+	font-size: 1.0rem;
+	font-weight: bold;
+}
+
+
+.prDetailCurrencyStyle .sapMSLIInfo {
+	font-size: 0.75rem;
+	font-weight: bold;
+}
+
+.prDetailNoStyle .sapMSLIInfo {
+	font-size: 1rem;
+    color: #09548d;
+    font-weight: bold;
+}
+
+
+.prDetailDeptStyle .sapMSLIInfo, .prDetailCreatorStyle .sapMSLIInfo, .prDetailDateStyle .sapMSLIInfo {
+    color: #09548d;
+}
+
+
+.sapMLIBImgNav {
+    width: 2.5rem;
+}
+
+/********New FE CSS End**************/
+
+
+#App--idSEDetails--idSEDetailsPage_footerBar,
+#App--idPRDetails--idPRDetailsPage_footerBar
+{
+    background-color: #09548d !important;
+}
+
+
+
+.login_layout {
+    background-color: #09548d !important;
+}
+
+
+
+.sapMText{
+    color:#09548d !important;
+}
+
+
+
+ .input_box input{
+	color:#09548d !important;
+} 
+
+
+
+#App--idLogin--idMsg {
+	color: #09548d;
+	font-size: large !important;
+	font-weight: bold;
+}
+
+#App--idLogin--idMsg2 {
+	color: #09548d;
+	font-weight: bold;
+	
+}
+
+
+
+#App--idLogin--idCheckBox-label {
+	color: #FFFFFF;	
+	/* font-weight: bold; */
+	text-align: center;
+}
+
+
+
+
+#idoDialog-footer,
+#idoPushDialog-footer,
+#idoConfirmDialog-footer,
+#idoPRConfirmDialog-footer,
+#idoLogoutDialog-footer,
+#idExitDialog-footer,
+#idoNoAuthDialog-footer {
+	background-color: #09548d !important;
+}
+
+
+#idoDialog-title,
+#idoPushDialog-title,
+#idoConfirmDialog-title,
+#idoPRConfirmDialog-title,
+#idoLogoutDialog-title,
+#idExitDialog-title,
+#idoNoAuthDialog-title
+ {
+	color:#09548d !important;
+	font-size: medium !important;
+    font-weight: bold;
+}
+
+
+.dialog_message {
+	color:#09548d !important;
+}
+  
+
+
+.login_button {
+    background-color: #ffffffd !important;
+    font-size: medium !important;
+    font-weight: bold;
+    /*border-radius: none;*/
+
+}
+
+
+.login_button .sapMBtnDefault, .login_button .sapMBtnDefault:hover, .login_button .sapMBtnDefault:focus {
+    background: transparent !important;
+    /*border: none !important;*/
+    color: #09548d !important;
+}
+
+
+
+#App--idLogin--idLoginPage_btnLogin-label {
+	color: #09548d;
+	font-weight: bold;
+}
+
+
+.header_title{
+    font-size: large;
+    font-weight: bold;
+    color: #09548d !important;
+}  
+
+input::-webkit-input-placeholder {
+    font-style: normal !important;
+    color: #add9fa !important;
+}
+input:-moz-placeholder { /* Firefox 18- */
+    font-style: normal !important;
+    color: #add9fa !important;
+}
+input::-moz-placeholder {  /* Firefox 19+ */
+    font-style: normal !important;
+    color: #add9fa !important;
+}
+input:-ms-input-placeholder {
+    font-style: normal !important;
+    color: #add9fa !important;
+}
+
+.sapMObjLNumberDiv .sapMObjectNumber .sapMObjectNumberText {
+    font-size: 1.0rem !important;
+}
+
+span.sapMBtnInner.sapMBtnReject {
+    background-image: none;
+    background-color: #09548d !important;
+    border-color: #09548d !important;
+    color: #ffffff;
+}

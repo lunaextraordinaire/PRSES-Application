@@ -1,0 +1,56 @@
+
+@font-face{
+    src: url(fonts/opensansRegular.ttf);
+    font-family: Open Sans;
+}
+*{
+    font-family: Open Sans !important;
+}
+
+
+/* company logo */
+#panel_footer_hbox > .sapMFlexItem:not(#copyright) {
+    /* uncomment to hide logo */
+    /*display: none;*/
+
+    /* uncomment to right align logo */
+    /*position: absolute;
+    right: 0px;*/
+}
+
+#logo {
+    /* change size of logo */
+    height: 70px !important;
+}
+
+
+
+/* copyright message */
+#copyright{
+    /* uncomment to hide copyright message */
+    /*visibility: hidden;*/
+
+    /* uncomment to right align text */
+    /*text-align: right;*/
+
+    /* uncomment to left align copyright message */
+    text-align: left;
+    left: 0px;
+
+}
+
+/* copyright message first line */
+#copyright1{
+    /* change text color */
+    color: white;
+
+    /* change text size */
+    font-size: 0.9 rem !important;
+}
+/* copyright message second line */
+#copyright2 {
+    /* change text color */
+    color: yellow;
+    font-size: 0.75rem !important;
+
+}

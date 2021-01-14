@@ -1,0 +1,59 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.commons.layout"
+		controllerName="zcitapp.AppDashboard" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" id="idDashboard">
+	    
+	    <!-- =============================== HEADER ========================================== -->
+		<customHeader>
+			<Bar id="idDashboard_customHeader">
+
+				<contentMiddle> 
+				    <Button id="idDashboard__refreshList" icon="sap-icon://refresh"
+						tap="refreshDashboard">
+					</Button>
+				    <Label id="idDashboard_lblApp" text="Dashboard"></Label> 
+				</contentMiddle>
+					
+				<contentRight>
+					<Button icon="sap-icon://key-user-settings" tap="handleOpen"></Button>
+				</contentRight>
+			</Bar>
+		</customHeader>
+	    
+		<!-- =============================== HEADER ========================================== -->
+		<content>
+		    <Panel backgroundDesign="Transparent">
+        		       		
+        		<VBox id="idSEVBox" backgroundDesign="Transparent" visible="false">
+        		    <items>
+        		        <!-- <Image alt="test1" width="50%" src="img/lnt.png"></Image> -->
+        		        <Button icon="sap-icon://excel-attachment" tap="openSES"></Button>
+        		        <Text id="idSETile" text="SESApp"></Text>
+        		        <HBox id="idSECountHBox">
+        		            <items>
+        		                <Text id="idSECountText" text=""></Text>
+        		            </items>
+        		        </HBox>		
+        		    </items>
+        		</VBox>
+
+
+				<VBox id="idPRVBox" backgroundDesign="Transparent" visible="false">
+					<items>
+						<Button icon="sap-icon://request" tap="openPR"></Button>
+						<Text id="idPRTile" text="PRApp"></Text>
+						<HBox id="idPRCountHBox">
+							<items>
+								<Text id="idPRCountText" text=""></Text>
+							</items>
+						</HBox>
+					</items>
+				</VBox>
+
+
+			</Panel>
+	
+		</content>
+		
+		
+	</Page>
+</core:View>

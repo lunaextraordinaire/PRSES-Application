@@ -1,0 +1,12 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ActionSheet
+		
+		showCancelButton="true"
+		placement="Bottom">
+			<Button text="Change Passcode" icon="sap-icon://key" press="actionSelected" />
+			<Button text="Change Password" icon="sap-icon://two-keys" press="actionSelected" />
+			<Button text="Logout" icon="sap-icon://log" press="actionSelected" />
+	</ActionSheet>
+</core:FragmentDefinition>

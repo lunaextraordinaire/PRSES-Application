@@ -1,0 +1,116 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.commons.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:c="sap.ui.commons" controllerName="zcitapp.PRItemDetails" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" id="idPRItemDetailsPage">
+				<!-- =============================== HEADER ========================================== -->
+		<customHeader>
+			<Bar id="idPRItemDetails_customHeader">
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" tap="back">
+					</Button>
+				</contentLeft>
+				<contentMiddle>
+					<Label id="idPRItemDetails_headerTitle" text="PR Item Details">
+
+					</Label>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://home" tap="home">
+
+					</Button>
+				</contentRight>
+			</Bar>
+		</customHeader>
+
+
+
+		<content>
+			<form:SimpleForm labelMinWidth="100" backgroundDesign="Transparent"
+				maxContainerCols="2" labelSpanS="1" labelSpanL="1" labelSpanM="1">
+				<Label id="idPR_ItemDetailPage_lblPRNo" text="PR No"></Label>
+
+				<Text id="idPR_ItemDetailPage_descPRNo" text="{model>/prItemDetails/0/prNo}"></Text>
+
+				<Label id="idPR_ItemDetailPage_lblItemNo" text="Item No"></Label>
+
+				<Text id="idPR_ItemDetailPage_descItemNo" text="{model>/prItemDetails/0/prItemNo}"></Text>
+
+				<Label id="idPR_ItemDetailPage_lblItemDesc" text="Item Description"></Label>
+
+				<Text id="idPR_ItemDetailPage_descItemDesc" text="{model>/prItemDetails/0/prItemDesc}"></Text>
+
+				<Label id="idPR_ItemDetailPage_lblItemQty" text="Item Quantity"></Label>
+
+				<Text id="idPR_ItemDetailPage_descItemQty" text="{model>/prItemDetails/0/prItemQty}"></Text>
+
+				<Label id="idPR_ItemDetailPage_lblItemValue" text="Item Value"></Label>
+
+				<Text id="idPR_ItemDetailPage_descItemValue" text="{model>/prItemDetails/0/prItemValue}"></Text>
+				
+				<Label id="idPR_ItemDetailPage_lblItemCurrency" text="Item Currency"></Label>
+				
+				<Text id="idPR_ItemDetailPage_descItemCurrency" text="{model>/prItemDetails/0/prItemCurrency}"></Text>
+
+				<Label id="idPR_ItemDetailPage_lblDelDate" text="Delivery Date"></Label>
+
+				<Text id="idPR_ItemDetailPage_descDelDate" text="{model>/prItemDetails/0/prItemDelDate}"></Text>
+					
+			</form:SimpleForm>
+			
+			
+			
+			<!-- =============================== Service List ========================================== -->
+
+			<List mode="None" id="idPRItemServiceList" backgroundDesign="Transparent" headerText="Service List" items="{model>/prItemServiceList}" visible="false">
+
+				<items>
+					<ObjectListItem title="{model>shortText}" type="Active"
+						tap="serviceSelect" growing="true" growingThreshold="10"
+						growingScrollToLoad="true">
+
+					</ObjectListItem>
+				</items>
+
+			</List>
+
+			<!--<List items="{model>/prItemServiceList}" backgroundDesign="Transparent" headerText="Service List"
+				id="idPRItemServiceList" visible="false">
+				<CustomListItem>
+					<Panel id="idPRItemServicePanel" expandable="true" expanded="false" backgroundDesign="Transparent"
+						class="" headerText="{model>shortText}">
+						<headerToolbar>
+							<Toolbar class="">
+								<Text text="{model>shortText}" class="" />
+							</Toolbar>
+						</headerToolbar>
+
+						<content>
+							<StandardListItem title="Line No"	info="{model>lineNo}" />
+							<StandardListItem title="Service" info="{model>service}" />
+							<StandardListItem title="Quantity" info="{model>qty}" />
+							<StandardListItem title="Unit" info="{model>unit}" />
+							<StandardListItem title="Gross" info="{model>gross}" />	
+							<StandardListItem title="Currency" info="{model>currency}" />
+							<StandardListItem title="Delivery Date" info="{model>deliveryDate}" />
+						</content>
+						
+						
+					</Panel>
+				</CustomListItem>
+			</List>-->
+			
+			
+			
+
+ 		</content>
+
+		<!-- =============================== FOOTER ========================================== -->
+
+		<!-- <footer>
+			<Bar id="idPO_ItemDetailPage_footerBar">
+				<contentRight>
+
+				</contentRight>
+			</Bar>
+		</footer> -->
+	</Page>
+</core:View>

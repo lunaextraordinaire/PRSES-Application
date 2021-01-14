@@ -1,0 +1,165 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.commons.layout" xmlns:c="sap.ui.commons"
+	xmlns:table="sap.ui.table" xmlns:form="sap.ui.layout.form" controllerName="zcitapp.SEDetails" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" id="idSEDetailsPage">
+		<!-- =============================== HEADER ========================================== -->
+		<customHeader>
+			<Bar id="idSEDetails_customHeader">
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" tap="back">
+					</Button>
+				</contentLeft>
+				<contentMiddle>
+					<Label id="idSEDetails_headerTitle" text="Service Entry Sheet Details">
+
+					</Label>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://home" tap="home">
+
+					</Button>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		
+	<!-- =============================== CONTENT ========================================== -->
+
+		<content>
+			<!--<ObjectHeader id="idPO_DetailPage_ObjHeader" title="{model>/seDetails/0/seNoTrimmed}" number="{model>/seDetails/0/seValue}"
+				intro="{model>/seDetails/0/seDesc}">
+				<attributes>
+									
+					<ObjectAttribute title="Service Entry Date" text="{model>/seDetails/0/seDate}">
+					</ObjectAttribute>
+					
+				</attributes>
+				
+				
+			</ObjectHeader>-->
+
+			<Panel id="idSE_DetailPage_ObjHeader" class="prPanelStyle" expanded="true" backgroundDesign="Transparent">
+				<content>
+					<HBox width="60%" backgroundDesign="Transparent">
+						<VBox class="twoItemsLeftVertic" width="100%" backgroundDesign="Transparent">
+							<StandardListItem class="prDetailDeptStyle" title="SES Info:  " info="{model>/seDetails/0/seDesc}" />
+						</VBox>
+						<VBox class="twoItemsRightVertic" width="40%" backgroundDesign="Transparent">
+							<StandardListItem class="" title="" info="" />
+						</VBox>
+					</HBox>
+					<HBox width="100%" backgroundDesign="Transparent">
+						<VBox class="twoItemsLeftVertic" width="60%" backgroundDesign="Transparent">
+							<StandardListItem class="prDetailNoStyle" title="SES No:  " info="{model>/seDetails/0/seNoTrimmed}" />
+							<StandardListItem class="prDetailDateStyle" title="SES Date:  " info="{model>/seDetails/0/seDate}" />
+							<StandardListItem class="prDetailCreatorStyle" title="SES Creator:  " info="{model>/seDetails/0/seCreator}" />
+						</VBox>
+
+						<VBox class="twoItemsRightVertic" width="40%" backgroundDesign="Transparent">
+							<StandardListItem class="" title="" info=" " />
+							<StandardListItem class="prDetailValueStyle" title="" info="{model>/seDetails/0/seValue}" />
+							<StandardListItem class="" title="" info="" />
+						</VBox>
+					</HBox>
+				</content>
+
+			</Panel>
+
+
+			<IconTabBar id="idPO_DetailPage_iconTabBar" backgroundDesign="Transparent" expandable="false" expanded="true">
+				<items>
+
+					<IconTabFilter id="idPO_DetailPage_headerIconTabFilter" key="info" text="Information" icon="sap-icon://message-information">
+						<content>
+							<form:SimpleForm id="idPO_DetailPage_HeaderForm" backgroundDesign="Transparent" labelMinWidth="100" maxContainerCols="1" labelSpanS="6"
+								labelSpanL="6" labelSpanM="6">
+
+
+								<!-- <Label id="idSEDetailPage_lblVendorCode" text="SE Date"></Label>
+
+								<Text id="idPO_DetailPage_descVendorCode" text="{model>/seDetails/0/seDate}"></Text> -->
+								
+								<Label id="idSE_DetailPage_lblInvoiceNo" text="Invoice No"></Label>
+
+								<Text id="idSE_DetailPage_descInvoiceNo" text="{model>/seDetails/0/invoiceNo}"></Text>
+
+								<Label id="idSE_DetailPage_lblVendorName" text="Vendor Name"></Label>
+
+								<Text id="idSE_DetailPage_descVendorName" text="{model>/seDetails/0/seVendor}"></Text>
+								
+								<Label id="idSE_DetailPage_lblPONo" text="PO No"></Label>
+
+								<Text id="idSE_DetailPage_descPONo" text="{model>/seDetails/0/poNo}"></Text>
+
+								<Label id="idSE_DetailPage_lblPOValue" text="PO Value"></Label>
+
+								<Text id="idSE_DetailPage_descPOValue" text="{model>/seDetails/0/poValue}"></Text>
+
+								<!--<Label id="idSE_DetailPage_lblLastChangeDate" text="SE Creator"></Label>
+
+								<Text id="idSE_DetailPage_descLastChangeDate" text="{model>/seDetails/0/seCreator}"></Text>-->
+								
+								<Label id="idSE_DetailPage_lblWorkComStDate" text="Work Start Date"></Label>
+
+								<Text id="idSE_DetailPage_descWorkComStDate" text="{model>/seDetails/0/seWorkComStDate}"></Text>
+								
+								<Label id="idSE_DetailPage_lblWorkComEndDate" text="Work End Date"></Label>
+
+								<Text id="idSE_DetailPage_descWorkComEndDate" text="{model>/seDetails/0/seWorkComEndDate}"></Text>
+
+
+							</form:SimpleForm>
+						</content>
+					</IconTabFilter>
+					
+					<IconTabFilter id="idPO_DetailPage_ItemIconTabFilter" key="items" text="Item Details" icon="sap-icon://sales-order-item">
+						<content>
+							<List  id="idPO_DetailPage_ItemTable" backgroundDesign="Transparent" items="{model>/seItems}">
+							    
+							    <items>
+							        <ObjectListItem type="Navigation" tap="listSelect" title="{model>itemNoTrimmed}"
+							          intro="{model>itemText}"
+							          number="{model>itemQty}"  
+							          numberUnit ="{model>itemUom}"
+							          >
+							            <firstStatus>
+							                <ObjectStatus text="{model>materialCode}">
+							                    
+							                </ObjectStatus>
+							            </firstStatus>
+							        </ObjectListItem>
+							        
+							    </items>
+							</List>
+						</content>
+					</IconTabFilter>
+
+					<IconTabFilter id="idPO_DetailPage_iconHeaderTabBar" key="items" text="File Note" icon="sap-icon://notes">
+						<content>
+							<form:SimpleForm id="idSE_DetailPage_HeaderTextForm" backgroundDesign="Transparent" labelMinWidth="100" maxContainerCols="1" labelSpanS="6"
+								labelSpanL="6" labelSpanM="6">
+
+								<Text class="headerText" id="idSE_DetailPage_descHeaderText" text="{model>/seHeaderText/0/sesHeaderText}"></Text>
+
+							</form:SimpleForm>
+						</content>
+					</IconTabFilter>
+
+				</items>
+
+			</IconTabBar>
+
+
+	</content>
+
+
+		<!-- =============================== FOOTER ========================================== -->
+
+		<footer>
+			<Bar id="idSEDetailsPage_footerBar">
+				<contentRight>
+					<Button id="idPO_DetailPage_footerBtn" text="Release" icon="sap-icon://accounting-document-verification" tap="release">
+					</Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

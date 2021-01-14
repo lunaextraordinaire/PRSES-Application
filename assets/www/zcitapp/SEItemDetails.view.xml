@@ -1,0 +1,68 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.commons.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:c="sap.ui.commons" controllerName="zcitapp.SEItemDetails" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" id="idSEItemDetailsPage">
+				<!-- =============================== HEADER ========================================== -->
+		<customHeader>
+			<Bar id="idSEItemDetails_customHeader">
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" tap="back">
+					</Button>
+				</contentLeft>
+				<contentMiddle>
+					<Label id="idSEItemDetails_headerTitle" text="Service Entry Item Details">
+
+					</Label>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://home" tap="home">
+
+					</Button>
+				</contentRight>
+			</Bar>
+		</customHeader>
+
+
+
+		<content>
+			<form:SimpleForm labelMinWidth="100" backgroundDesign="Transparent"
+				maxContainerCols="2" labelSpanS="1" labelSpanL="1" labelSpanM="1">
+				<Label id="idPO_ItemDetailPage_lblPONo" text="Item No"></Label>
+
+				<Text id="idPO_ItemDetailPage_descPONo" text="{model>/seItemDetails/0/itemNoTrimmed}"></Text>
+
+				<Label id="idPO_ItemDetailPage_lblItemNo" text="Item Short Text"></Label>
+
+				<Text id="idPO_ItemDetailPage_descItemNo" text="{model>/seItemDetails/0/itemText}"></Text>
+
+				<Label id="idPO_ItemDetailPage_lblMaterialCode" text="Item Quantity"></Label>
+
+				<Text id="idPO_ItemDetailPage_descMaterialCode" text="{model>/seItemDetails/0/itemQty}"></Text>
+
+				<Label id="idPO_ItemDetailPage_lblMaterialShorttext" text="Item UoM"></Label>
+
+				<Link id="idPO_ItemDetailPage_descMaterialShorttext" text="{model>/seItemDetails/0/itemUom}"
+					wrapping="false" press="MatTextTap"></Link>
+
+				<Label id="idPO_ItemDetailPage_lblQuantity" text="Item Gross Value"></Label>
+
+				<Text id="idPO_ItemDetailPage_descQuantity" text="{model>/seItemDetails/0/itemGrossval}"></Text>
+
+				<Label id="idPO_ItemDetailPage_lblQuantityUnit" text="Item Net Value"></Label>
+
+				<Text id="idPO_ItemDetailPage_descQuantityUnit" text="{model>/seItemDetails/0/itemNetval}"></Text>
+					
+			</form:SimpleForm>
+
+ 		</content>
+
+		<!-- =============================== FOOTER ========================================== -->
+
+		<!-- <footer>
+			<Bar id="idPO_ItemDetailPage_footerBar">
+				<contentRight>
+
+				</contentRight>
+			</Bar>
+		</footer> -->
+	</Page>
+</core:View>

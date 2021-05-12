@@ -6,4 +6,4 @@ In Purchase Request (PR) app, user can see the details of particular PR. User ca
 
 App is based on SAPUI5 (XML Views, JavaScript Views and JavaScript Controllers), Kapsel and OData Services.
 
-*Note: The code mentioned here is only the UI and not the backend SAP code. 
+*Note: The code mentioned here is only the UI and not the backend SAP code.*
